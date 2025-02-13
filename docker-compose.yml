@@ -1,0 +1,50 @@
+services:
+  db:
+    image: mysql:8.0
+    platform: linux/x86_64
+    container_name: sumit-db
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: 'root'
+    volumes:
+      - ./storage/docker/db:/var/lib/mysql
+    networks:
+      - sumit-db-network
+
+  app:
+    build:
+      context: ./
+      dockerfile: ./docker/php/Dockerfile
+    container_name: sumit-app
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./:/var/www
+      - ./docker/php/extend-php.ini:/usr/local/etc/php/conf.d/extend-php.ini
+    depends_on:
+      - db
+    networks:
+      - sumit-db-network
+      - sumit-webserver-network
+
+  webserver:
+    image: nginx:1.21.4-alpine
+    container_name: sumit-webserver
+    restart: unless-stopped
+    volumes:
+      - ./:/var/www
+      - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
+      - ./storage/docker/logs/nginx/:/var/log/nginx/
+    ports:
+      - "80:80"
+    networks:
+      - sumit-webserver-network
+
+networks:
+  sumit-db-network:
+  sumit-webserver-network:
