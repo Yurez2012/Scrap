@@ -38,7 +38,7 @@ class ArenaService
 
     public function getProfileById()
     {
-        $peoples = People::whereNull('headline')->get();
+        $peoples = People::whereNull('type_key_translation')->get();
 
         foreach ($peoples as $people) {
             $data = $this->query('/7805/thing/'.$people->uuid);
@@ -80,7 +80,7 @@ class ArenaService
         try {
             $response = $this->client->get($this->configArena['url'] . $url, [
                 'headers' => [
-                    'x-authorization' => 'a6c2b34c-9c04-4372-a374-b5bf7654508a',
+                    'x-authorization' => '5533b91d-f0ef-46d6-93d2-79f8113eb43b',
                 ],
             ]);
 
