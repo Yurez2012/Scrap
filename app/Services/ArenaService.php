@@ -21,7 +21,7 @@ class ArenaService
 
     public function getPeoples()
     {
-        for ($i = 219; $i < 219; $i++) {
+        for ($i = 269; $i < 272; $i++) {
             $data = $this->query('/7805/search/extension/91505?order=asc&page=' . $i . '&sort=group');
 
             foreach ($data as $datum) {
@@ -32,7 +32,7 @@ class ArenaService
                 ]);
             }
 
-            sleep(10);
+            sleep(3);
         }
     }
 
@@ -71,7 +71,7 @@ class ArenaService
 
             $people->update($result);
 
-            sleep(3);
+            sleep(1);
         }
     }
 
@@ -89,6 +89,10 @@ class ArenaService
             return Arr::get($result, 'data');
 
         } catch (RequestException $e) {
+echo '<pre>';
+print_r($url);
+echo '</pre>';
+
             echo '<pre>';
             print_r($e->getResponse());
             echo '</pre>';
