@@ -21,8 +21,9 @@ class ArenaService
 
     public function getPeoples()
     {
-        for ($i = 269; $i < 272; $i++) {
-            $data = $this->query('/7805/search/extension/91505?order=asc&page=' . $i . '&sort=group');
+       // 244
+        for ($i = 199; $i < 239; $i++) {
+            $data = $this->query('/8763/search/extension/125166?order=asc&page=' . $i . '&sort=group');
 
             foreach ($data as $datum) {
                 People::updateOrCreate([
@@ -41,7 +42,7 @@ class ArenaService
         $peoples = People::whereNull('type_key_translation')->get();
 
         foreach ($peoples as $people) {
-            $data = $this->query('/7805/thing/'.$people->uuid);
+            $data = $this->query('/8763/thing/'.$people->uuid);
 
             $result = [
                 'headline'                          => Arr::get($data, 'headline'),
@@ -80,7 +81,7 @@ class ArenaService
         try {
             $response = $this->client->get($this->configArena['url'] . $url, [
                 'headers' => [
-                    'x-authorization' => '5533b91d-f0ef-46d6-93d2-79f8113eb43b',
+                    'x-authorization' => 'e91259c8-2512-4b1c-ac42-fdce5d757490',
                 ],
             ]);
 
@@ -94,7 +95,7 @@ print_r($url);
 echo '</pre>';
 
             echo '<pre>';
-            print_r($e->getResponse());
+            print_r($e->getMessage());
             echo '</pre>';
             die;
             die;

@@ -3,16 +3,25 @@
 namespace App\Http\Controllers;
 
 use App\Models\Exhibitors;
+use App\Services\ArenaService;
 use App\Services\ElmiaService;
 use Illuminate\Support\Arr;
 
 class TechArenaController extends Controller
 {
-    public function __construct(protected ElmiaService $elmiaService)
+    public function __construct(
+        protected ElmiaService $elmiaService,
+        public ArenaService $arenaService
+    )
     {
     }
 
     public function index()
+    {
+        $this->arenaService->getProfileById();
+    }
+
+    public function old()
     {
         $exhibitors = Exhibitors::get();
 
