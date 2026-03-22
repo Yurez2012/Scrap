@@ -40,4 +40,9 @@ return [
         'login'    => env('TECH_ARENA_LOGIN'),
         'password' => env('TECH_ARENA_PASSWORD'),
     ],
+
+    'hannover_messa' => [
+        'bearer_token' => env('HANNOVER_MESSA_BEARER_TOKEN'),
+        'org_id'       => env('HANNOVER_MESSA_ORG_ID', 'VwYkbnNjBukp2P2DrDl7'),
+    ],
 ];

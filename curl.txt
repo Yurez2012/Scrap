@@ -1,0 +1,18 @@
+POST https://www.talque.com/api/v1/org/profile/search HTTP/2.0
+content-type: application/json
+x-tq-app-wl: Hannover Messe 2026
+accept: application/json, text/plain, */*
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3d3dy50YWxxdWUuY29tIiwiaWF0IjoxNzc0MTY2MjA5LCJzdWIiOiJpLnByb2tpcGNodWtAc29sb3dheS50ZWNoIiwic2NvcGUiOlsiUFJFQVVUSCIsIkxPR0lOIiwiTE9HSU5fUEFTU1dPUkQiXSwic2Vzc2lvbklkIjoidlA3T2M4WTIxNk5IMk4zRWM1UzgiLCJhY2NvdW50SWQiOiJRdk1BWXJXd2pielIyVUpuRzJUTCIsInByb2ZpbGVJZCI6IkVJUWwwWjFnOXBWUE5uQW92S3d0In0.GW1G9kCbOWpwBrvTuVwLiM5epLUVp4JHTmSPKi_noyc
+sec-fetch-site: cross-site
+x-tq-app-ver: 1646
+accept-language: en-US
+x-tq-app-tgt: IOS
+sec-fetch-mode: cors
+origin: app://www.talque.com
+user-agent: Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148
+content-length: 601
+sec-fetch-dest: empty
+priority: u=3, i
+accept-encoding: gzip, deflate, br, zstd
+
+{"orgId":"VwYkbnNjBukp2P2DrDl7","limit":25,"onlyParticipants":true,"onlySpeakers":false,"onlyHighlight":false,"text":"","categories":[],"keywords":[],"seeking":[],"skills":[],"geo":{"regions":[],"country":null},"trivialOrder":"ALPHABETIC","cursor":"False:AFTOeJwlELJKo0P5nsaZeBZL0widS1bNrT3chDD494iMVFrNZSWkli-am-qgteYDSMP1KrZm2Qj7EMqmcAA5Dtyn0PpWTuJmvOgSUOXFNS9kLWGT9rNqvwp0o2Jz3xd4KB_VWacf8uLaJ6k5Nc7TDIhOBX6xGZHSDk5rIjJ-mNdXqHJe2R4OR76dGQyOTuSIzcf_7p-zsx8s2sAYBVfYbryLyLZ3McPjS_DrRKQUxmEaEFymkEcQoAO9kVO1AmyKVdSP_d2rTfTcMMx1T0M8SxGrVUd0lO9Q3IEWuaZAwTup_LPKBwH4-24frjN71RVUqurps1HM3cRn9M0NvBiNoF9l"}
